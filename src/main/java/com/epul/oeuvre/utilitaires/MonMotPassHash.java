@@ -97,16 +97,16 @@ public  class MonMotPassHash
     }
 
     public  static  char[] converttoCharArray( String maChaine)
-{
-
-    char[] mesChar = maChaine.toCharArray();
-    /*char[] mesChar = new char[maChaine.length()];
-    for (int i =0; i< maChaine.length(); i++)
     {
-        mesChar[i]= maChaine.charAt(i);
 
-    }*/
-    return mesChar;
-}
+        char[] mesChar = maChaine.toCharArray();
+        /*char[] mesChar = new char[maChaine.length()];
+        for (int i =0; i< maChaine.length(); i++)
+        {
+            mesChar[i]= maChaine.charAt(i);
+
+        }*/
+        return mesChar;
+    }
 }
 
