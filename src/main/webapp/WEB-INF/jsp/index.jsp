@@ -13,9 +13,12 @@
 <%@include file="vues/navigation.jsp"%>
 <div class="jumbotron text-center">
 
-    <h1>Bienvenue sur la médiathèque de Polytech</h1>
+    <h1>Bienvenue dans l'application Permis Piste !</h1>
 </div>
 <h2>Sélectionnez dans le menu la fonctionnalité voulue !</h2>
+<h1>Maxime Maxime et Kohlain y sont pas beaux</h1>
+
+<a class="btn btn-secondary" href="/apprenant/getApprenants" role="button">1) S'enregistrer en tant qu'apprenant</a>
 <%@include file="vues/footer.jsp"%>
 </body>
 </html>
