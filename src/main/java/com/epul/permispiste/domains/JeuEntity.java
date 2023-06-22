@@ -24,7 +24,7 @@ public class JeuEntity {
     private Set<ActionEntity> actions;
 
     @OneToMany(mappedBy = "jeu")
-    private Set<JeuEntity> missions;
+    private Set<MissionEntity> missions;
 
 
     public Integer getNumjeu() {
@@ -41,6 +41,14 @@ public class JeuEntity {
 
     public void setLibellejeu(String libelleJeu) {
         this.libelleJeu = libelleJeu;
+    }
+
+    public Set<MissionEntity> getMissions() {
+        return missions;
+    }
+
+    public Set<ActionEntity> getActions() {
+        return actions;
     }
 
     @Override

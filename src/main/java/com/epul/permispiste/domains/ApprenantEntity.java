@@ -1,7 +1,10 @@
 package com.epul.permispiste.domains;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "apprenant", schema = "permispiste")
@@ -16,6 +19,13 @@ public class ApprenantEntity {
     @Basic
     @Column(name = "PRENOMAPPRENANT", nullable = false, length = 25)
     private String prenomApprenant;
+
+    @OneToMany(mappedBy = "apprenant")
+    private Set<InscritEntity> inscriptions;
+
+    public Set<InscritEntity> getInscriptions() {
+        return inscriptions;
+    }
 
     public Integer getNumapprenant() {
         return numApprenant;
