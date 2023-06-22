@@ -32,6 +32,7 @@ public class ActionEntity {
     private Set<RegleEntity> regles;
 
     @ManyToOne
+    @Column(name = "ACT_NUMACTION")
     @JoinColumn( name = "NUMACTION")
     private ActionEntity successeur;
 
