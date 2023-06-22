@@ -43,8 +43,8 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="/jeu/insererJeu"> <span class="glyphicon glyphicon-plus"></span> Ajouter un jeu</a></li>
-                        <li><a href="/jeu/getJeux"><span class="glyphicon glyphicon-th-list"></span> Lister les jeux</a></li>
+                        <li><a href="/jeu/getJeux"> <span class="glyphicon glyphicon-plus"></span> Lister tous les jeux</a></li>
+                        <li><a href="${pageContext.request.contextPath}/user/5"><span class="glyphicon glyphicon-th-list"></span> Lister mes jeux</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
