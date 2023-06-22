@@ -52,7 +52,7 @@ public class ApprenantService implements IApprenantService{
      * @return Une liste triée de tous les apprenants.
      */
     private Sort sortByNom() {
-        return new Sort(Sort.Direction.ASC, "nomApprenants");
+        return new Sort(Sort.Direction.ASC, "nomApprenant");
     }
 
     /**

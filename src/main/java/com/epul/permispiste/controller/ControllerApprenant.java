@@ -1,6 +1,5 @@
 package com.epul.permispiste.controller;
 
-import com.epul.oeuvre.domains.AdherentEntity;
 import com.epul.oeuvre.mesExceptions.MonException;
 import com.epul.permispiste.domains.ApprenantEntity;
 import com.epul.permispiste.service.ApprenantService;
@@ -72,7 +71,6 @@ public class ControllerApprenant {
      */
     @RequestMapping(method = RequestMethod.POST, value = "/insererApprenant")
     public ModelAndView insererApprenant(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
         String destinationPage = "";
         try {
             ApprenantEntity unApprenant = new ApprenantEntity();
@@ -100,7 +98,6 @@ public class ControllerApprenant {
      */
     @RequestMapping(value = "/ajoutApprenant")
     public ModelAndView ajouterApprenant(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
         String destinationPage = "";
         try {
             destinationPage = "vues/ajouterApprenant";
