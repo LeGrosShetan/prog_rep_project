@@ -1,6 +1,6 @@
 package com.epul.permispiste.service;
 
-import com.epul.oeuvre.mesExceptions.MonException;
+import com.epul.permispiste.mesExceptions.MonException;
 import com.epul.permispiste.domains.ApprenantEntity;
 import com.epul.permispiste.repositories.ApprenantRepository;
 import org.springframework.beans.factory.annotation.Autowired;

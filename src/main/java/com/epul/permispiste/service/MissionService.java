@@ -1,6 +1,6 @@
 package com.epul.permispiste.service;
 
-import com.epul.oeuvre.mesExceptions.MonException;
+import com.epul.permispiste.mesExceptions.MonException;
 import com.epul.permispiste.domains.JeuEntity;
 import com.epul.permispiste.domains.MissionEntity;
 import com.epul.permispiste.repositories.JeuRepository;

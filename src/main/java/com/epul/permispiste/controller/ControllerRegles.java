@@ -1,6 +1,6 @@
 package com.epul.permispiste.controller;
 
-import com.epul.oeuvre.mesExceptions.MonException;
+import com.epul.permispiste.mesExceptions.MonException;
 import com.epul.permispiste.domains.ActionEntity;
 import com.epul.permispiste.domains.ObjectifEntity;
 import com.epul.permispiste.domains.RegleEntity;

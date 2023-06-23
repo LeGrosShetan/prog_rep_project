@@ -1,6 +1,6 @@
 package com.epul.permispiste.controller;
 
-import com.epul.oeuvre.mesExceptions.MonException;
+import com.epul.permispiste.mesExceptions.MonException;
 import com.epul.permispiste.domains.ApprenantEntity;
 import com.epul.permispiste.domains.InscritEntity;
 import com.epul.permispiste.domains.JeuEntity;
