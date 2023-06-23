@@ -33,10 +33,10 @@ public class ControllerApprenant {
         try {
             mesApprenants = unApprenantService.getTousLesApprenants();
             request.setAttribute("mesApprenants", mesApprenants);
-            destinationPage = "vues/listerApprenant";
+            destinationPage = "vues/listerApprenants";
         } catch (MonException e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "vues/Erreur";
         } catch (Exception e) {
             request.setAttribute("MesErreurs", e.getMessage());
             destinationPage = "vues/Erreur";
@@ -78,6 +78,26 @@ public class ControllerApprenant {
             unApprenant.setPrenomapprenant(request.getParameter("prenomApprenant"));
             unApprenantService.ajouterApprenant(unApprenant);
             destinationPage = "index";
+        } catch (MonException e) {
+            request.setAttribute("MesErreurs", e.getMessage());
+            destinationPage = "/vues/Erreur";
+        } catch (Exception e) {
+            request.setAttribute("MesErreurs", e.getMessage());
+            destinationPage = "/vues/Erreur";
+        }
+
+        return new ModelAndView(destinationPage);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/modifierApprenant/{numApprenant}\"")
+    public ModelAndView modifierApprenant(HttpServletRequest request, @PathVariable(value = "numApprenant") int numApprenant) throws Exception {
+        String destinationPage = "";
+        Set<ApprenantEntity> mesApprenants = null;
+        try {
+            unApprenantService.modifierApprenant(numApprenant);
+            mesApprenants = unApprenantService.getTousLesApprenants();
+            request.setAttribute("mesApprenants", mesApprenants);
+            destinationPage = "vues/listerApprenants";
         } catch (MonException e) {
             request.setAttribute("MesErreurs", e.getMessage());
             destinationPage = "/vues/Erreur";

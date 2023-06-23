@@ -26,10 +26,6 @@
                     <td>${item.numApprenant}</td>
                     <td>${item.nomAdherent}</td>
                     <td>${item.prenomAdherent}</td>
-                    <td><a class="btn btn-info" href="modifierAdherent.htm?id=${item.idAdherent}" role="button"><span
-                            class="glyphicon glyphicon-pencil"></span> Modifier</a>
-                        <a class="btn btn-danger" href="supprimerAdherent.htm?id=${item.idAdherent}" role="button"><span
-                                class="glyphicon glyphicon-remove-circle"></span> Supprimer</a></td>
                 </tr>
             </c:forEach>
         </table>

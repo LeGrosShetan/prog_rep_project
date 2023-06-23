@@ -15,8 +15,40 @@
                     Se Connecter
                     <span class="caret"></span>
                 </a>
-                </c:if>
             </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="/mission/getMissions">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Missions
+                        <span class="caret"></span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Apprenants
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/apprenant/ajoutApprenant"> <span class="glyphicon glyphicon-plus"></span> Ajouter un apprenant</a></li>
+                        <li><a href="/apprenant/getApprenants"><span class="glyphicon glyphicon-th-list"></span> Lister les apprenants</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="/jeu/getJeux">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Jeux
+                        <span class="caret"></span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="/action/getActions">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Actions
+                        <span class="caret"></span>
+                    </a>
+                </li>
+            </c:if>
             <c:if test="${sessionScope.id > 0  }">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="/mission/listerMissions">
@@ -32,7 +64,6 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="/apprenant/insererApprenant"> <span class="glyphicon glyphicon-plus"></span> Ajouter un apprenant</a></li>
                         <li><a href="/apprenant/getApprenants"><span class="glyphicon glyphicon-th-list"></span> Lister les apprenants</a></li>
                     </ul>
                 </li>
@@ -54,7 +85,6 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="/action/insererAction"> <span class="glyphicon glyphicon-plus"></span> Ajouter une action</a></li>
                         <li><a href="/action/getActions"><span class="glyphicon glyphicon-th-list"></span> Lister les actions</a></li>
                     </ul>
                 </li>

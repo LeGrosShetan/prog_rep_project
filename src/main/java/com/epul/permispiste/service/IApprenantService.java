@@ -8,7 +8,7 @@ public interface IApprenantService {
 
     public void ajouterApprenant(ApprenantEntity apprenant);
 
-    public void modifierApprenant(ApprenantEntity apprenant);
+    public void modifierApprenant(int numApprenant);
 
     public List<ApprenantEntity> getTousLesApprenants();
 

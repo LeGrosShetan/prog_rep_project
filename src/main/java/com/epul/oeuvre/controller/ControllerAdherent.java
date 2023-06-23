@@ -84,7 +84,7 @@ public class ControllerAdherent {
         return new ModelAndView(destinationPage);
     }
 
-
+    //Sert a quelque chose cette méthode ?
     @RequestMapping(value = "/ajout")
     public ModelAndView ajouterAdherent(HttpServletRequest request, HttpServletResponse response) throws Exception {
 

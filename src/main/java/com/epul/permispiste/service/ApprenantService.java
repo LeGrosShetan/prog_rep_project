@@ -29,19 +29,19 @@ public class ApprenantService implements IApprenantService{
 
     /**
      * Fonction de modification d'un apprenant.
-     * @param apprenant L'apprenant à modifier.
+     * @param numApprenant L'id de l'apprenant à modifier.
      */
-    public void modifierApprenant(ApprenantEntity apprenant){
+    public void modifierApprenant(int numApprenant){
         try {
             ApprenantEntity unApprenant = new ApprenantEntity();
             ApprenantEntity finalUnApprenant = unApprenant;
-            unApprenant = unApprenantRepository.findById(apprenant.getNumapprenant()).orElseThrow(
-                    () -> new MonException("¨Apprenant", "numApprenant", finalUnApprenant.getNumapprenant())
+            unApprenant = unApprenantRepository.findById(numApprenant).orElseThrow(
+                    () -> new MonException("Apprenant", "numApprenant", finalUnApprenant.getNumapprenant())
             );
-            apprenant.setNumapprenant(unApprenant.getNumapprenant());
-            apprenant.setNomapprenant(unApprenant.getNomapprenant());
-            apprenant.setPrenomapprenant(unApprenant.getPrenomapprenant());
-            this.unApprenantRepository.save(apprenant);
+            unApprenant.setNumapprenant(unApprenant.getNumapprenant());
+            unApprenant.setNomapprenant(unApprenant.getNomapprenant());
+            unApprenant.setPrenomapprenant(unApprenant.getPrenomapprenant());
+            this.unApprenantRepository.save(unApprenant);
         } catch (Exception e) {
             throw new MonException("Insert", "Sql", e.getMessage());
         }

@@ -10,7 +10,7 @@ public class ActionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "NUMACTION", nullable = false)
-    private Integer numAction;
+    private int numAction;
     @Basic
     @Column(name = "LIBACTION", nullable = false, length = 25)
     private String libAction;
@@ -47,7 +47,7 @@ public class ActionEntity {
         return numAction;
     }
 
-    public void setNumaction(Integer numaction) {
+    public void setNumaction(int numaction) {
         this.numAction = numaction;
     }
 
