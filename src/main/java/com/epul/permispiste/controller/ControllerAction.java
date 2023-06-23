@@ -9,7 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
+
+import java.util.Set;
 
 @RequestMapping("/action")
 @RestController
@@ -19,10 +20,17 @@ public class ControllerAction {
     @Autowired
     private ActionService uneActionService;
 
+    /**
+     * Liste toutes les actions et renvoie à la vue de liste des actions.
+     * @param request
+     * @param response
+     * @return Un appel à la vue qui liste les actions.
+     * @throws Exception La potentielle exception levée.
+     */
     @RequestMapping(method = RequestMethod.GET, value = "/getActions")
     public ModelAndView getActions(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String destinationPage = "";
-        List<ActionEntity> mesActions = null;
+        Set<ActionEntity> mesActions = null;
         try {
             mesActions = uneActionService.getToutesLesActions();
             request.setAttribute("mesActions", mesActions);
@@ -37,8 +45,13 @@ public class ControllerAction {
         return new ModelAndView(destinationPage);
     }
 
+    /**
+     * Récupère une action via son numéro d'action.
+     * @param numAction Le numéro de l'action à chercher.
+     * @return L'action correspondant au numéro d'action.
+     */
     @RequestMapping(value = "/getUneAction/{numAction}\"", method = RequestMethod.GET)
-    public ActionEntity getJeuByNum(@PathVariable(value = "numAction") int numAction) {
+    public ActionEntity getActionByNum(@PathVariable(value = "numAction") int numAction) {
         ActionEntity uneAction = null;
         try {
             uneAction = uneActionService.getUneActionNum(numAction);

@@ -9,7 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
+
+import java.util.Set;
 
 @RequestMapping("/apprenant")
 @RestController
@@ -29,7 +30,7 @@ public class ControllerApprenant {
     @RequestMapping(method = RequestMethod.GET, value = "/getApprenants")
     public ModelAndView getApprenants(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String destinationPage = "";
-        List<ApprenantEntity> mesApprenants = null;
+        Set<ApprenantEntity> mesApprenants = null;
         try {
             mesApprenants = unApprenantService.getTousLesApprenants();
             request.setAttribute("mesApprenants", mesApprenants);

@@ -40,7 +40,7 @@ public class JeuService {
         return (Set<JeuEntity>) mesJeux;
     }
 
-    public List<JeuEntity> getTousLesJeuxApprenant(int numApprenant){
+    public Set<JeuEntity> getTousLesJeuxApprenant(int numApprenant){
         return null;
     }
 

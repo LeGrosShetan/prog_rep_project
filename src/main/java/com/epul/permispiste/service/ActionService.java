@@ -8,6 +8,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class ActionService {
@@ -27,7 +28,7 @@ public class ActionService {
      * Liste toutes les actions.
      * @return La liste de toutes les actions.
      */
-    public List<ActionEntity> getToutesLesActions() {
+    public Set<ActionEntity> getToutesLesActions() {
 
         List<ActionEntity> mesActions = null;
         try {
@@ -35,7 +36,7 @@ public class ActionService {
         } catch (Exception e) {
             throw new MonException("Insert", "Sql", e.getMessage());
         }
-        return mesActions;
+        return (Set<ActionEntity>) mesActions;
     }
 
     /**
@@ -43,7 +44,7 @@ public class ActionService {
      * @param numAction Le numéro d'action.
      * @return L'action correspondant au numAction.
      */
-    public ActionEntity getUnJeuNum(int numAction){
+    public ActionEntity getUneActionNum(int numAction){
         return uneActionRepository.findById(numAction).orElseThrow(
                 () -> new MonException("Client", "numAction", numAction)
         );

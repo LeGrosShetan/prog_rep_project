@@ -2,13 +2,13 @@ package com.epul.permispiste.service;
 
 import com.epul.permispiste.domains.JeuEntity;
 
-import java.util.List;
+import java.util.Set;
 
 public interface IJeuService {
 
-    public List<JeuEntity> getTousLesJeux();
+    public Set<JeuEntity> getTousLesJeux();
 
-    public List<JeuEntity> getTousLesJeuxApprenant(int numApprenant);
+    public Set<JeuEntity> getTousLesJeuxApprenant(int numApprenant);
 
     public JeuEntity getUnJeuNum(int numJeu);
 }

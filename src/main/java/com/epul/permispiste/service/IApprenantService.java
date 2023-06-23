@@ -2,7 +2,7 @@ package com.epul.permispiste.service;
 
 import com.epul.permispiste.domains.ApprenantEntity;
 
-import java.util.List;
+import java.util.Set;
 
 public interface IApprenantService {
 
@@ -10,7 +10,7 @@ public interface IApprenantService {
 
     public void modifierApprenant(int numApprenant);
 
-    public List<ApprenantEntity> getTousLesApprenants();
+    public Set<ApprenantEntity> getTousLesApprenants();
 
     public ApprenantEntity getUnApprenantNum(int numApprenant);
 }

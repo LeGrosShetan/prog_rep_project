@@ -8,6 +8,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class ApprenantService implements IApprenantService{
@@ -59,7 +60,7 @@ public class ApprenantService implements IApprenantService{
      * Liste tous les apprenants.
      * @return La liste de tous les apprenants.
      */
-    public List<ApprenantEntity> getTousLesApprenants() {
+    public Set<ApprenantEntity> getTousLesApprenants() {
 
         List<ApprenantEntity> mesApprenants = null;
         try {
@@ -68,7 +69,7 @@ public class ApprenantService implements IApprenantService{
         } catch (Exception e) {
             throw new MonException("Insert", "Sql", e.getMessage());
         }
-        return mesApprenants;
+        return (Set<ApprenantEntity>) mesApprenants;
     }
 
     /**

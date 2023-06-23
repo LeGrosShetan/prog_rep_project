@@ -43,21 +43,21 @@ public class ControllerAdherent {
         return new ModelAndView(destinationPage);
     }
 
-   /* private Sort sortByNom() {
+    /* private Sort sortByNom() {
         return new Sort(Sort.Direction.ASC, "nomAdherent");
     }*/
 
     @RequestMapping(value = "/getUnAdherent/{id}\"", method = RequestMethod.GET)
     public AdherentEntity getAdherentById(@PathVariable(value = "id") int id) {
-        AdherentEntity unAd = null;
-        try {
-            unAd = unAdherentService.getUnAdherentID(id);
-        } catch (MonException e) {
-            throw e;
-        } catch (Exception e) {
-            throw e;
-        }
-        return unAd;
+    AdherentEntity unAd = null;
+    try {
+        unAd = unAdherentService.getUnAdherentID(id);
+    } catch (MonException e) {
+        throw e;
+    } catch (Exception e) {
+        throw e;
+    }
+    return unAd;
     }
 
 
