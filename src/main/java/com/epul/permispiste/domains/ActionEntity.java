@@ -5,10 +5,10 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "action", schema = "permispiste")
+@Table(name = "action", schema = "permispiste", catalog = "")
 public class ActionEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "NUMACTION", nullable = false)
     private Integer numAction;
     @Basic
@@ -19,7 +19,7 @@ public class ActionEntity {
     @JoinTable(
             name = "est_associe",
             joinColumns = @JoinColumn(name = "NUMACTION"),
-            inverseJoinColumns = @JoinColumn (name = "NUMOBJECTIF")
+            inverseJoinColumns = @JoinColumn(name = "NUMOBJECTIF")
     )
     private Set<ObjectifEntity> objectifs;
 
@@ -27,16 +27,20 @@ public class ActionEntity {
     @JoinTable(
             name = "possede",
             joinColumns = @JoinColumn(name = "NUMACTION"),
-            inverseJoinColumns = @JoinColumn (name = "NUMREGLE")
+            inverseJoinColumns = @JoinColumn(name = "NUMREGLE")
     )
     private Set<RegleEntity> regles;
 
-    @ManyToOne
-    @Column(name = "ACT_NUMACTION")
-    @JoinColumn( name = "NUMACTION")
-    private ActionEntity successeur;
+    //@ManyToOne
+    //@JoinColumn( name = "NUMACTION")
+    //private ActionEntity successeur;
 
-    @ManyToMany(mappedBy = "actions")
+    @ManyToMany
+    @JoinTable(
+            name = "appartient",
+            joinColumns = @JoinColumn(name = "NUMACTION"),
+            inverseJoinColumns = @JoinColumn(name = "NUMJEU")
+    )
     private Set<JeuEntity> jeux;
 
     public Integer getNumaction() {
@@ -53,6 +57,38 @@ public class ActionEntity {
 
     public void setLibaction(String libaction) {
         this.libAction = libaction;
+    }
+
+    public Set<ObjectifEntity> getObjectifs() {
+        return objectifs;
+    }
+
+    public void setObjectifs(Set<ObjectifEntity> objectifs) {
+        this.objectifs = objectifs;
+    }
+
+    public Set<RegleEntity> getRegles() {
+        return regles;
+    }
+
+    public void setRegles(Set<RegleEntity> regles) {
+        this.regles = regles;
+    }
+
+    /*public ActionEntity getSuccesseur() {
+        return successeur;
+    }
+
+    public void setSuccesseur(ActionEntity successeur) {
+        this.successeur = successeur;
+    }*/
+
+    public Set<JeuEntity> getJeux() {
+        return jeux;
+    }
+
+    public void setJeux(Set<JeuEntity> jeux) {
+        this.jeux = jeux;
     }
 
     @Override

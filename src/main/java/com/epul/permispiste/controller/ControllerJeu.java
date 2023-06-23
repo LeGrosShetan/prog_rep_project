@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,6 +27,13 @@ public class ControllerJeu {
     @Autowired
     private ApprenantService unApprenantService;
 
+    /**
+     * Liste tous les jeux et renvoie à la vue de liste des jeux.
+     * @param request
+     * @param response
+     * @return Un appel à la vue qui liste les jeux.
+     * @throws Exception La potentielle exception levée.
+     */
     @RequestMapping(method = RequestMethod.GET, value = "/getJeux")
     public ModelAndView getJeux(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String destinationPage = "";
@@ -44,6 +52,11 @@ public class ControllerJeu {
         return new ModelAndView(destinationPage);
     }
 
+    /**
+     * Récupère une liste de tous les jeux auquel est inscrit l'apprenant de numéro numApprenant.
+     * @param numApprenant Le numéro de l'apprenant dont on cherche les jeux.
+     * @return L'action correspondant au numéro d'action.
+     */
     @RequestMapping(value = "/getJeux/{numApprenant}\"", method = RequestMethod.GET)
     public Set<JeuEntity> getJeuxByApprenant(@PathVariable(value = "numApprenant") int numApprenant) {
         Set<JeuEntity> mesJeux = new HashSet<>();

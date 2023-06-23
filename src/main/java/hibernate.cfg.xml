@@ -4,17 +4,21 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306/baseoeuvre</property>
+        <property name="connection.url">jdbc:mariadb://localhost:3306/permispiste</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.username">userepul</property>
         <property name="connection.password">epul</property>
-        <mapping class="com.epul.oeuvre.domains.AdherentEntity"/>
-        <mapping class="com.epul.oeuvre.domains.EmpruntEntity"/>
-        <mapping class="com.epul.oeuvre.domains.OeuvrepretEntity"/>
-        <mapping class="com.epul.oeuvre.domains.OeuvreventeEntity"/>
-        <mapping class="com.epul.oeuvre.domains.ProprietaireEntity"/>
-        <mapping class="com.epul.oeuvre.domains.ReservationEntity"/>
-        <mapping class="com.epul.oeuvre.domains.UtilisateurEntity"/>
+        <mapping class="com.epul.permispiste.domains.ActionEntity"/>
+        <mapping class="com.epul.permispiste.domains.ApprenantEntity"/>
+        <mapping class="com.epul.permispiste.domains.CalendrierEntity"/>
+        <mapping class="com.epul.permispiste.domains.IndicateurEntity"/>
+        <mapping class="com.epul.permispiste.domains.InscritEntity"/>
+        <mapping class="com.epul.permispiste.domains.JeuEntity"/>
+        <mapping class="com.epul.permispiste.domains.MissionEntity"/>
+        <mapping class="com.epul.permispiste.domains.ObjectifEntity"/>
+        <mapping class="com.epul.permispiste.domains.ObtentionEntity"/>
+        <mapping class="com.epul.permispiste.domains.RegleEntity"/>
+
         <!-- <property name="connection.username"/> -->
         <!-- <property name="connection.password"/> -->
 

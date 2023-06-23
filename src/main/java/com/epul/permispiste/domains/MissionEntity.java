@@ -43,6 +43,14 @@ public class MissionEntity {
         this.libMission = libMission;
     }
 
+    public Set<ObjectifEntity> getObjectifs() {
+        return objectifs;
+    }
+
+    public void setObjectifs(Set<ObjectifEntity> objectifs) {
+        this.objectifs = objectifs;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

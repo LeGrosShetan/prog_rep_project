@@ -15,12 +15,7 @@ public class JeuEntity {
     @Column(name = "LIBELLEJEU", nullable = false, length = 25)
     private String libelleJeu;
 
-    @ManyToMany
-    @JoinTable(
-            name = "appartient",
-            joinColumns = @JoinColumn(name = "NUMJEU"),
-            inverseJoinColumns = @JoinColumn(name = "NUMACTION")
-    )
+    @ManyToMany(mappedBy = "jeux")
     private Set<ActionEntity> actions;
 
     @OneToMany(mappedBy = "jeu")
